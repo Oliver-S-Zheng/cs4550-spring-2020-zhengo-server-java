@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Profile</title>
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script >
+        $('button').click(function(){
+            $('.alert').show()
+        })
+        function showAlertJQ(){
+            $('.alert').show()
+        }
+    </script>
+
+</head>
+
+<body>
+<form class = "container">
+    <h1>Profile</h1>
+    <div class = "form-group row field">
+        <label for="usernameFld" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-10">
+            <input id="usernameFld" class="wbdv-field wbdv-username field-input form-control" type="text" placeholder="John" readonly/>
+        </div>
+    </div>
+    <div class="form-group row field">
+        <label for="phoneFld" class="col-sm-2 col-form-label">Phone</label>
+
+        <div class="col-sm-10">
+            <input id="phoneFld" class="wbdv-field wbdv-phone field-input form-control" type="text" placeholder="(XXX)-XXX-XXXX"/>
+        </div>
+    </div>
+    <div class = "form-group row field">
+        <label for="emailFld" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input id="emailFld" class="wbdv-field wbdv-email field-input form-control" type="email" placeholder="johnman@email.com"/>
+        </div>
+    </div>
+    <div class = "form-group row field">
+        <label for="roleFld" class="col-sm-2 col-form-label">Role</label>
+
+        <div class="col-sm-10">
+            <select id="roleFld" class = "wbdv-field wbdv-role field-input form-control">
+                <option value="Faculty">Faculty</option>
+                <option value="Student">Student</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+    </div>
+    <div class = "form-group row field">
+        <label for="dobFld" class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-10">
+            <input type="Date" id="dobFld" class="field-input form-control wbdv-field wbdv-dob" />
+        </div>
+    </div>
+    <button id="updateBtn" class = "btn btn-primary btn-lg btn-block wbdv-button wbdv-update" onclick="showAlertJQ()">Update</button>
+    <a id="logoutBtn" class = "btn btn-danger btn-lg btn-block wbdv-button wbdv-logout" href="/login/template/client.html">Logout</a>
+
+    <div id="success-update" class="alertFld alert alert-success wbdv-message " >
+        Successfully updated
+    </div>
+</form>
+</body>
+
+</html>
