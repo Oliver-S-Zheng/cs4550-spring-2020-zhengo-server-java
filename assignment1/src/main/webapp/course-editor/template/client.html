@@ -1,0 +1,73 @@
+<head>
+    <title>Course Editor</title>
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="courselist.style.client.css">
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<div class="topnav">
+    <a href="#"><span class="wbdv-course-editor wbdv-close">x</span></a>
+    <a class="wbdv-course-title" href="#">CS5610 - WebDev</a>
+    <a class="active wbdv-page-tab" href="#">Build</a>
+    <a href="#">Pages</a>
+    <a href="#">Theme</a>
+    <a href="#">Store</a>
+    <a href="#"><span class="wbdv-new-page-btn">+</span></a>
+</div>
+
+<body>
+<div class="wbdv-module-list">
+    <ul class="module-navigation">
+        <li class="wbdv-module-item">
+            <a class="wbdv-module-item-title" href="#">
+                Module 1 - jQuery
+                <span class="wbdv-module-item-delete-btn">x</span>
+            </a>
+        </li>
+        <li class="wbdv-module-item">
+            <a class="wbdv-module-item-title" href="#">
+                Module 2 - React
+                <span class="wbdv-module-item-delete-btn">x</span>
+            </a>
+        </li>
+        <li class="wbdv-module-item">
+            <a class="wbdv-module-item-title" href="#">
+                Module 3 - Node
+                <span class="wbdv-module-item-delete-btn">x</span>
+            </a>
+        </li>
+        <li class="wbdv-module-item">
+            <a class="wbdv-module-item-title" href="#">
+                <span class="wbdv-module-item-add-btn">+</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="content-container">
+    <div class="container-fluid">
+        <div class = "wbdv-topic-pill-list">
+            <input type="radio" id="topic1" class="wbdv-topic-pill" name="tabs"  checked>
+            <label for="topic1">Topic 1</label>
+            <input type="radio" id="topic2" class="wbdv-topic-pill" name="tabs">
+            <label for="topic2">Topic 2</label>
+            <input type="radio" id="topic3" class="wbdv-topic-pill" name="tabs">
+            <label for="topic3">Topic 3</label>
+            <input type="radio" id="topic4" class="wbdv-topic-pill" name="tabs">
+            <label for="topic4">Topic 4</label>
+            <button class="btn wbdv-button wbdv-topic-add-btn" type="submit">+</button>
+            <div id="pill-content1">
+                <p>Topic 1 material</p>
+            </div>
+            <div id="pill-content2">
+                <p>Topic 2 material</p>
+            </div>
+            <div id="pill-content3">
+                <p>Topic 3 material</p>
+            </div>
+            <div id="pill-content4">
+                <p>Topic 4 material</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
