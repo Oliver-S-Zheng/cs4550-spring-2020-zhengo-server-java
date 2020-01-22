@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Course List</title>
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="navbar navbar-dark bg-primary align-items-center">
+    <div class = container-fluid>
+        <div class = " row col-4">
+            <button class="navbar-toggler wbdv-field wbdv-hamburger float-left" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-brand wbdv-label wbdv-course-manager text-truncate" href="#">Course Manager</div>
+        </div>
+        <div class=" navbar-form col-8">
+            <input class="form-control-lg wbdv-field wbdv-new-course w-75" type="search" placeholder="New Course Name">
+            <button class="btn btn btn-danger my-2 my-sm-0 add-button navbar-btn wbdv-button wbdv-add-course" type="submit">+</button>
+        </div>
+    </div>
+</div>
+<div class="header ">
+    <div class="container sticky-top align-bottom header d-flex align-items-center" >
+            <span class="col-5 font-weight-bold text-left header-content wbdv-header wbdv-title">
+                Title
+            </span>
+        <span class="col-2 font-weight-bold header-content text-truncate wbdv-header wbdv-owner">
+                Owned by
+                <i class="fa fa-angle-down wbdv-header wbdv-sort"></i>
+            </span>
+        <span class="col-3 font-weight-bold header-content last-modified text-truncate wbdv-header wbdv-last-modified">
+                Last modified by me
+            </span>
+
+        <div id = "layoutBtns" class = "btnContainer col-1">
+            <button type = "button" class="btn-outline  wbdv-button wbdv-list-layout current-layout" ><i class="fa fa-bars"></i> </button>
+            <button type = "button" class="btn-outline  wbdv-button wbdv-grid-layout "><i class="fa fa-th-large"></i> </button>
+        </div>
+        <div id = "orderBtns" class = "btnContainer col-1">
+            <button type = "button" class="btn-outline  wbdv-header wbdv-sort current-layout" ><i class="fa fa-sort-alpha-asc"></i> </button>
+            <button type = "button" class="btn-outline  wbdv-header wbdv-sort "><i class="fa fa-sort-alpha-desc"></i> </button>
+        </div>
+
+
+    </div>
+</div>
+<div class = "container">
+    <div class="list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action wbdv-row wbdv-course">
+            <div class="row align-items-center">
+                <span class="col-5 font-weight-bold text-left wbdv-row wbdv-title">
+                    <i class="fa fa-th-list wbdv-row wbdv-icon" aria-hidden="true"></i> Fake Name
+                </span>
+                <span class="col-2  text-left wbdv-row wbdv-owner">
+                    Me
+                </span>
+                <span class="col-4  text-left wbdv-row wbdv-modified-date">
+                    2:03 PM
+                </span>
+                <div>
+                    <button type="button" class="btn btn-outline-dark noborder float-right wbdv-row wbdv-button wbdv-delete"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="row align-items-center wbdv-row wbdv-course">
+                <span class="col-5 font-weight-bold text-left wbdv-row wbdv-title">
+                    <i class="fa fa-th-list wbdv-row wbdv-icon" aria-hidden="true"></i> My Course
+                </span>
+                <span class="col-2  text-left wbdv-row wbdv-owner">
+                    Me
+                </span>
+                <span class="col-4  text-left wbdv-row wbdv-modified-date">
+                    Yesterday
+                </span>
+                <div>
+                    <button type="button" class="btn btn-outline-dark noborder float-right wbdv-row wbdv-button wbdv-delete"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="row align-items-center wbdv-row wbdv-course">
+                <span class="col-5 font-weight-bold text-left wbdv-row wbdv-title">
+                    <i class="fa fa-th-list wbdv-row wbdv-icon" aria-hidden="true"></i> Don't Open ;)
+                </span>
+                <span class="col-2  text-left wbdv-row wbdv-owner">
+                    Me
+                </span>
+                <span class="col-4  text-left wbdv-row wbdv-modified-date">
+                    June 9, 1420
+                </span>
+                <div>
+                    <button type="button" class="btn btn-outline-dark noborder float-right wbdv-row wbdv-button wbdv-delete"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
+</body>
+
+</html>
