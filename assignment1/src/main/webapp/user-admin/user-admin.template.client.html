@@ -10,6 +10,7 @@
     <link href="user-admin.style.client.css" rel="stylesheet" />
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../models/user.model.client.js"></script>
     <script src="../services/user.service.client.js"></script>
     <script src="user-admin.controller.client.js"></script>
 </head>
@@ -41,14 +42,14 @@
         </select></td>
         <td>
             <span class="float-right" style="white-space: nowrap">
-                <i class="fa-2x fa fa-search wbdv-search"></i>
-                <i class="fa-2x fa fa-plus wbdv-create"></i>
-                <i class="fa-2x fa fa-check wbdv-update"></i>
+                <i id="searchBtn" class="fa-2x fa fa-search wbdv-search"></i>
+                <i id="createBtn" class="fa-2x fa fa-plus wbdv-create"></i>
+                <i id="updateBtn" class="fa-2x fa fa-check wbdv-update"></i>
             </span>
         </td>
     </tr>
     </thead>
-    <tbody class="wbdv-tbody">
+    <tbody id = "userTbl" class="wbdv-tbody">
     <tr class="wbdv-template wbdv-user wbdv-hidden">
         <td class="wbdv-username">ada</td>
         <td>&nbsp;</td>
