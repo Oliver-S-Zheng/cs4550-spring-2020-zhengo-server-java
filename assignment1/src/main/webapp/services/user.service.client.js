@@ -4,38 +4,43 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/001653165/users;';
     var self = this;
-    var allUsers = [];
 
     function createUser(user) {
-        allUsers.push(user)
-    }
-    function findAllUsers() {  }
-    function findUserById(userId) {
-        for (i = 0; i < allUsers.length; i++) {
-            var user = allUsers[i];
-            if (user.id.localeCompare(userId) == 0) {
-                return user;
+        return fetch(self.url, {
+            method : 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                "content-type": "application/json"
             }
-        }
-        return undefined;
+        }).then(response => response.json())
+    }
+    function findAllUsers() {
+        return fetch(this.url).then(function(response){
+            console.log(response);
+            return response.json();
+        })
+    }
+    function findUserById(userId) {
+        return promise = fetch(`${self.url}/${userId}`).then(function(response){
+            console.log(response);
+            return response.json();
+        })
     }
     function updateUser(userId, user) {
-        for (i = 0; i < allUsers.length; i++) {
-            var oldUser = allUsers[i];
-            if (oldUser.id.localeCompare(userId) == 0) {
-                allUsers[i] = user;
+        return fetch(`${self.url}/${userId}`, {
+            method:'PUT',
+            body: JSON.stringify(user),
+            headers: {
+                "content-type": "application/json"
             }
-        }
+        }).then(response => response.json())
     }
     function deleteUser(userId) {
-        for (i = 0; i < allUsers.length; i++) {
-            var user = allUsers[i];
-            if (user.id.localeCompare(userId) == 0) {
-                allUsers.splice(i)
-            }
-        }
+        return fetch(`${self.url}/${userId}`, {
+            method:'DELETE'
+        })
     }
 
 }

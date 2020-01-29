@@ -16,7 +16,6 @@ function User(username, password, firstName, lastName, role, id) {
     this.getLastName = getLastName;
     this.getRole = getRole;
     this.setRole = setRole;
-    this.getId = getId;
 
     function setUsername(username) {
         this.username = username;
@@ -51,9 +50,5 @@ function User(username, password, firstName, lastName, role, id) {
     }
     function getRole() {
         return this.role;
-    }
-
-    function getId(){
-        return this.id;
     }
 }

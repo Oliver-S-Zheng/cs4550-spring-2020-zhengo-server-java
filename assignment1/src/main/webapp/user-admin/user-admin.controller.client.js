@@ -26,6 +26,7 @@
         $removeBtn.click(deleteUser);
         $editBtn.click(findUserById);
         $updateBtn.click(updateUser);
+        findAllUsers();
 
     }
     function createUser() {
@@ -35,26 +36,35 @@
         var lastName = $lastNameFld.val();
         var role = $roleFld.val();
 
-        var user = new User(username, password, firstName, lastName, role, ''+id);
-        userService.createUser(user);
-
-        renderUser(user);
-        id = id + 1;
+        var user = new User(username, password, firstName, lastName, role);
+        userService.createUser(user).then(remoteUser => {
+            var usr = remoteUser;
+            renderUser(usr);
+        });
     }
     function findAllUsers() {
-        var allUsers = usersService.findAllUsers();
-        renderUsers(allUsers);
+        var allUsers = userService.findAllUsers();
+        userService.findAllUsers()
+            .then(remoteUsers => {
+                var users = remoteUsers;
+                renderUsers(users)
+            });
 
     }
     function findUserById(event) {
         var id = $(event.target).prop('id');
         var user = userService.findUserById(id);
-        $usernameFld.val(user.getUsername());
-        $passwordFld.val(user.getPassword());
-        $firstNameFld.val(user.getFirstName());
-        $lastNameFld.val(user.getLastName());
-        $roleFld.val(user.getRole());
-        $updateBtn.prop('id', id+'r');
+        userService.findUserById(id)
+            .then(remoteUser => {
+                var user = remoteUser;
+                renderUsers(user)
+                $usernameFld.val(user.username);
+                $passwordFld.val(user.password);
+                $firstNameFld.val(user.firstName);
+                $lastNameFld.val(user.lastName);
+                $roleFld.val(user.role);
+                $updateBtn.prop('id', "u"+user._id);
+            });
 
 
     }
@@ -67,7 +77,7 @@
     function selectUser() {
     }
     function updateUser() {
-        var id = $(event.target).prop('id').charAt(0);
+        var id = $(event.target).prop('id').substring(1);
         if (id.localeCompare('') == 0) {
             return;
         }
@@ -86,6 +96,12 @@
         $(event.target).prop('id', '');
     }
     function renderUser(user) {
+        var username = user.username;
+        var password = user.password;
+        var firstName = user.firstName;
+        var lastName = user.lastName;
+        var role = user.role;
+        var id = user._id;
         var newRow = $userRowTemplate.clone();
         newRow.removeClass("wbdv-template").removeClass("wbdv-hidden");
         newRow.find(".wbdv-username").text(username);
@@ -97,9 +113,12 @@
         newRow.prop('id', 'user' + id);
         newRow.find('.wbdv-edit').prop('id', '' + id);
         newRow.find('.wbdv-remove').prop('id', '' + id);
-        $tbody.append(user);
+        $tbody.append(newRow);
     }
     function renderUsers(users) {
+        if (users == undefined) {
+            return;
+        }
         for (i = 0; i < users.length; i++) {
             renderUser(users[i]);
         }
