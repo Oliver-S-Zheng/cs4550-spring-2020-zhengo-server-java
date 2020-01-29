@@ -1,3 +1,7 @@
 .heading {
     font-size: x-large;
 }
+
+.wbdv-hidden {
+    visibility: hidden
+}

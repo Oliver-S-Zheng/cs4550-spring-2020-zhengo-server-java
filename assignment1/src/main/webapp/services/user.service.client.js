@@ -6,9 +6,36 @@ function AdminUserServiceClient() {
     this.updateUser = updateUser;
     this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
     var self = this;
-    function createUser(user) {  }
+    var allUsers = [];
+
+    function createUser(user) {
+        allUsers.push(user)
+    }
     function findAllUsers() {  }
-    function findUserById(userId) { }
-    function updateUser(userId, user) {}
-    function deleteUser(userId) { }
+    function findUserById(userId) {
+        for (i = 0; i < allUsers.length; i++) {
+            var user = allUsers[i];
+            if (user.id.localeCompare(userId) == 0) {
+                return user;
+            }
+        }
+        return undefined;
+    }
+    function updateUser(userId, user) {
+        for (i = 0; i < allUsers.length; i++) {
+            var oldUser = allUsers[i];
+            if (oldUser.id.localeCompare(userId) == 0) {
+                allUsers[i] = user;
+            }
+        }
+    }
+    function deleteUser(userId) {
+        for (i = 0; i < allUsers.length; i++) {
+            var user = allUsers[i];
+            if (user.id.localeCompare(userId) == 0) {
+                allUsers.splice(i)
+            }
+        }
+    }
+
 }
